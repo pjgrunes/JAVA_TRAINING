@@ -8,12 +8,12 @@
     
 	<appender name="DAILY_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- Current log file -->
-		<file>logs/bank-app.log</file>
+		<file>logs/bank-app-act9.log</file>
 		
 		<!-- Rolling policy: Create new file daily --> 
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> 
 			<!-- File name pattern: YYYY-MM-DD --> 
-			<fileNamePattern>logs/bank-app-%d{yyyy-MM-dd}.log</fileNamePattern> 
+			<fileNamePattern>logs/bank-app-act9-%d{yyyy-MM-dd}.log</fileNamePattern> 
 			<!-- Keep 30 days of logs --> 
 			<maxHistory>30</maxHistory> 
 			<!-- Max total size: 1GB --> 

@@ -1,0 +1,24 @@
+2026-01-27 16:09:04.091 [INFO] m.BankAccountService - Creating account for owner: John Doe
+2026-01-27 16:09:04.096 [INFO] m.BankAccountService - Account ACC001 created successfully for John Doe
+2026-01-27 16:09:04.097 [INFO] m.BankAccountService - Creating account for owner: Jane Smith
+2026-01-27 16:09:04.097 [INFO] m.BankAccountService - Account ACC002 created successfully for Jane Smith
+2026-01-27 16:09:04.099 [INFO] m.BankAccountService - Transfer request: ACC001 -> ACC002, amount: 3000.0
+2026-01-27 16:09:04.099 [INFO] m.BankAccountService - Transfer successful: ACC001 -> ACC002, amount: 3000.0
+2026-01-27 16:09:04.101 [INFO] m.BankAccountService - Transfer request: ACC001 -> ACC999, amount: 1000.0
+2026-01-27 16:09:04.103 [WARN] m.BankAccountService - Transfer failed: destination account ACC999 not found
+2026-01-27 16:09:04.105 [INFO] m.BankAccountService - Transfer request: ACC001 -> ACC002, amount: -500.0
+2026-01-27 16:09:04.105 [WARN] m.BankAccountService - Transfer failed: invalid amount -500.0
+2026-01-27 16:09:04.109 [INFO] m.BankAccountService - Transfer request: ACC001 -> ACC001, amount: 1000.0
+2026-01-27 16:09:04.109 [WARN] m.BankAccountService - Transfer failed: same source and destination account ACC001
+2026-01-27 16:09:04.111 [INFO] m.BankAccountService - Transfer request: ACC999 -> ACC002, amount: 1000.0
+2026-01-27 16:09:04.111 [WARN] m.BankAccountService - Transfer failed: source account ACC999 not found
+2026-01-27 16:09:04.112 [INFO] m.BankAccountService - Transfer request: ACC002 -> ACC001, amount: 50000.0
+2026-01-27 16:09:04.112 [WARN] m.BankAccountService - Transfer failed: insufficient funds in account ACC002. Balance: 8000.0, Required: 50000.0
+2026-01-27 16:09:04.113 [INFO] m.BankAccountService - Creating account for owner: Bob Johnson
+2026-01-27 16:09:04.113 [WARN] m.BankAccountService - Account creation failed: account ACC001 already exists
+2026-01-27 16:09:04.114 [INFO] m.BankAccountService - Creating account for owner: Alice Brown
+2026-01-27 16:09:04.114 [WARN] m.BankAccountService - Account creation failed: account number is null or empty
+2026-01-27 16:09:04.114 [INFO] m.BankAccountService - Creating account for owner: 
+2026-01-27 16:09:04.114 [WARN] m.BankAccountService - Account creation failed: owner name is null or empty
+2026-01-27 16:09:04.115 [INFO] m.BankAccountService - Creating account for owner: Charlie Wilson
+2026-01-27 16:09:04.115 [WARN] m.BankAccountService - Account creation failed: invalid initial balance -1000.0
