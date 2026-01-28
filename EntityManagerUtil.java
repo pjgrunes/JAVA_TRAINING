@@ -5,31 +5,38 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public final class EntityManagerUtil {
-
-    private static final EntityManagerUtil INSTANCE = new EntityManagerUtil();
+	
+	private static EntityManagerUtil instance;
     private final EntityManagerFactory emf;
 
     private EntityManagerUtil() {
         this.emf = Persistence.createEntityManagerFactory("default");
     }
 
-    public static EntityManagerUtil getInstance() {
-        return INSTANCE;
-    }
+    public static synchronized EntityManagerUtil getInstance() {
+	       if (instance == null) {
+	           instance = new EntityManagerUtil();
+	       }
+	       return instance;
+	   }
 
     public EntityManager createEntityManager() {
         return emf.createEntityManager();
     }
+    
+    public boolean isOpen(EntityManager em) {
+	       return em != null && em.isOpen();
+	   }
 
     public void closeEntityManager(EntityManager em) {
-        if (em != null && em.isOpen()) {
-            em.close();
-        }
-    }
+	       if (isOpen(em)) {
+	           em.close();
+	       }
+	   }
 
     public void shutdownFactory() {
-        if (emf != null && emf.isOpen()) {
-            emf.close();
-        }
+	       if (emf.isOpen()) {
+	           emf.close();
+	       }
     }
 }
